@@ -1,10 +1,17 @@
 import type { Metadata } from "next";
 import { Inter as FontSans } from "next/font/google";
 
-import { cn } from "@/lib/utils";
+import NavBar from "@/components/common/NavBar";
+import { Separator } from "@/components/ui/separator";
+import Container from "@/components/common/Container";
+import { Toaster } from "@/components/ui/toaster";
+
 import QueryProvider from "@/providers/QueryProvider";
 import ThemeProvider from "@/providers/ThemeProvider";
+import { cn } from "@/lib/utils";
+
 import "./globals.css";
+import Neww from "@/components/common/Neww";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -23,7 +30,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <link rel="icon" type="image/x-icon" href="/app/favicon.ico" />
+      <link rel="icon" type="image/x-icon" href="/public/favicon.ico" />
       <body
         className={cn(
           "min-h-screen bg-background font-sans antialiased",
@@ -36,7 +43,17 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <QueryProvider>{children}</QueryProvider>
+          <QueryProvider>
+            <Neww />
+            <Container>
+              {/* <NavBar /> */}
+            </Container>
+            <Separator />
+            <main>
+              <Container>{children}</Container>
+            </main>
+            <Toaster />
+          </QueryProvider>
         </ThemeProvider>
       </body>
     </html>
