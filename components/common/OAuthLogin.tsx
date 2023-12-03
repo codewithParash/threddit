@@ -12,14 +12,9 @@ const OAuthLogin = () => {
 
   const loginWithGoogle = async () => {
     try {
-      await signIn("google");
-      return toast({
-        variant: "default",
-        title: "Login successfull!!",
-        description: `You are now logged in successfully.`
-      });
+      return await signIn("google");
     } catch (error) {
-      toast({
+      return toast({
         variant: "destructive",
         title: "Error",
         description: `There is an error: ${error}`,

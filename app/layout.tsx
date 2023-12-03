@@ -11,7 +11,6 @@ import ThemeProvider from "@/providers/ThemeProvider";
 import { cn } from "@/lib/utils";
 
 import "./globals.css";
-import Neww from "@/components/common/Neww";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -44,9 +43,8 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <QueryProvider>
-            <Neww />
             <Container>
-              {/* <NavBar /> */}
+              <NavBar />
             </Container>
             <Separator />
             <main>
