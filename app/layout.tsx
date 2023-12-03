@@ -29,7 +29,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <link rel="icon" type="image/x-icon" href="/public/favicon.ico" />
+      <link rel="icon" type="image/x-icon" href="/app/favicon.ico" />
       <body
         className={cn(
           "min-h-screen bg-background font-sans antialiased",
